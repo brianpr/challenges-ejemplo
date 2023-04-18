@@ -1,4 +1,5 @@
 ﻿using BLL;
+using DTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace aspnetCoreAngular.Controllers
@@ -23,11 +24,9 @@ namespace aspnetCoreAngular.Controllers
         }
 
         [HttpGet]
-        public bool List()
+        public List<ChallengeDTO> List()
         {
-            _logic.Challenges.All();
-
-            return true;
+            return _logic.Challenges.All();
         }
     }
 }

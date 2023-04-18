@@ -14,7 +14,8 @@ namespace BLL
                 .ToList()
                 .Select(model => new ChallengeDTO
                 {
-                    
+                    ChallengeId = model.ChallengeId,
+                    Name = model.Name
                 })
                 .ToList();
         }

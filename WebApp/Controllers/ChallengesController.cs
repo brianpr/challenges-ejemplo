@@ -1,0 +1,33 @@
+﻿using BLL;
+using Microsoft.AspNetCore.Mvc;
+
+namespace aspnetCoreAngular.Controllers
+{
+    [ApiController]
+    [Route("[controller]/[action]")]
+    public class ChallengesController : ControllerBase
+    {
+        private readonly ILogicService _logic;
+
+        public ChallengesController(ILogicService logic)
+        {
+            _logic = logic;
+        }
+
+        [HttpGet]
+        public bool Test()
+        {
+            _logic.Challenges.Test();
+
+            return true;
+        }
+
+        [HttpGet]
+        public bool List()
+        {
+            _logic.Challenges.All();
+
+            return true;
+        }
+    }
+}

@@ -9,10 +9,12 @@ namespace BLL
     public interface ILogicService
     {
         ChallengeService Challenges { get; }
+        UserService Users { get; }
     }
     public class LogicService: ILogicService
     {
         private ChallengeService _challenges = null;
+        private UserService _users = null;
         public ChallengeService Challenges
         {
             get
@@ -23,6 +25,19 @@ namespace BLL
                 }
 
                 return _challenges;
+            }
+        }
+
+        public UserService Users
+        {
+            get
+            {
+                if (_users == null)
+                {
+                    _users = new UserService();
+                }
+
+                return _users;
             }
         }
     }

@@ -6,6 +6,7 @@ namespace DAL
     public class Context: DbContext
     {
         public DbSet<Challenge> Challenges { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -28,5 +28,11 @@ namespace aspnetCoreAngular.Controllers
         {
             return _logic.Challenges.All();
         }
+
+        [HttpGet]
+        public ChallengeDTO GetById(int id)
+        {
+            return _logic.Challenges.GetById(id);
+        }
     }
 }
